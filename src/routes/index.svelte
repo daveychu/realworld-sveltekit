@@ -1,9 +1,9 @@
 <script>
-	import { token } from '$lib/stores';
+	import { user } from '$lib/stores';
 </script>
 
 <div class="home-page">
-	{#if !$token}
+	{#if !$user}
 		<div class="banner">
 			<div class="container">
 				<h1 class="logo-font">conduit</h1>

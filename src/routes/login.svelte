@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { token } from '$lib/stores';
+	import { user } from '$lib/stores';
 	import { post } from '$lib/utils';
 
 	let email: string;
@@ -10,7 +10,7 @@
 		const response = await post(`api/users/login`, { user: { email, password } });
 
 		if (response.user) {
-			token.set(response.user.token);
+			user.set(response.user);
 			goto('/');
 		}
 	}
