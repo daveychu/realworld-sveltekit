@@ -1,3 +1,13 @@
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	import { token } from '$lib/stores';
+
+	async function logout() {
+		token.set(null);
+		goto('/');
+	}
+</script>
+
 <div class="settings-page">
 	<div class="container page">
 		<div class="row">
@@ -28,6 +38,9 @@
 						<button class="btn btn-lg btn-primary pull-xs-right"> Update Settings </button>
 					</fieldset>
 				</form>
+				<!-- Line break for logout button -->
+				<hr />
+				<button class="btn btn-outline-danger" on:click={logout}> Or click here to logout. </button>
 			</div>
 		</div>
 	</div>

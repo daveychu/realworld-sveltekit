@@ -1,10 +1,16 @@
+<script>
+	import { token } from '$lib/stores';
+</script>
+
 <div class="home-page">
-	<div class="banner">
-		<div class="container">
-			<h1 class="logo-font">conduit</h1>
-			<p>A place to share your knowledge.</p>
+	{#if !$token}
+		<div class="banner">
+			<div class="container">
+				<h1 class="logo-font">conduit</h1>
+				<p>A place to share your knowledge.</p>
+			</div>
 		</div>
-	</div>
+	{/if}
 
 	<div class="container page">
 		<div class="row">
@@ -12,7 +18,7 @@
 				<div class="feed-toggle">
 					<ul class="nav nav-pills outline-active">
 						<li class="nav-item">
-							<a class="nav-link disabled" href="">Your Feed</a>
+							<a class="nav-link" href="">Your Feed</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link active" href="">Global Feed</a>
